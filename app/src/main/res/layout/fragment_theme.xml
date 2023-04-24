@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/purple_200"
+    tools:context=".ThemeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Set Theme:"
+        android:textAlignment="center"
+        android:textSize="32sp" />
+    <TextView
+        android:id="@+id/idtvTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_below="@id/rl1"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="32sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!--radio group for switching theme-->
+
+        <RadioGroup
+            android:id="@+id/idRGgroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <!--radio button for light theme-->
+            <RadioButton
+                android:id="@+id/idRBLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:textSize="20sp"
+                android:text="Light" />
+
+            <!--radio button for dark theme-->
+            <RadioButton
+                android:id="@+id/idRBDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Dark" />
+
+        </RadioGroup>
+    </RelativeLayout>/>
+
+</LinearLayout>
