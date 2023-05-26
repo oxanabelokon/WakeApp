@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 import com.example.myapplication.databinding.ActivityMainBinding;
 
@@ -40,22 +42,25 @@ public class PersonFragment extends Fragment {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                welcome.setText("Welcome to Alarm App, " + editName.getText().toString() + "!!");
+               welcome.setText("Welcome to Alarm App, " + editName.getText().toString() + "!!");
                 editName.setVisibility(View.GONE);
                 enterNameText.setVisibility(View.INVISIBLE);
-
             }
         });
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Puzzle.class);
+                Intent intent = new Intent(getActivity(), MainActivity.class);
                 intent.putExtra("name", editName.getText().toString());
                 getActivity().startActivity(intent);
+
             }
         });
 
+
         return v;
     }
+
 }

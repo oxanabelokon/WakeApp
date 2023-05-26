@@ -35,9 +35,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //BottomNavigationView bottomNavigationView;
     ActivityMainBinding activityMainBinding;
-    String ringtone;
-    ImageButton cancelButton;
-
+    String ringtone,nameView;
 
     private TimePicker timePicker;
     private TextClock currentTime;
@@ -61,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         currentTime = findViewById(R.id.textClock);
 
+        //get name
+        Intent intent1 = getIntent();
+        nameView = intent1.getStringExtra("name");
 
         alarmSet.setOnClickListener(this);
 
@@ -73,30 +74,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alarmCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Puzzle.class);
+                intent.putExtra("name", nameView);
+
                 //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 //dialog.show();
                 openPopUpWindow();
-                //finish();
-                //System.exit(0);
-
             }
         });
 
 
         //bottomNavigationView = findViewById(R.id.bottomNav);
-
         month = findViewById(R.id.month);
         day = findViewById(R.id.day);
         year = findViewById(R.id.year);
-
-
-       /* cancelButton=findViewById(R.id.cancel);
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.cancel();
-            }
-        });*/
 
         //bottom nav
         activityMainBinding.bottomNav.setOnItemSelectedListener(item -> {
@@ -130,6 +121,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //get ringtones
         Intent intent = getIntent();
         ringtone = intent.getStringExtra("sound");
+
+        //app exit
+        if (getIntent().getBooleanExtra("EXIT", false))
+        {
+            System.exit(0);
+        }
+
     }
 
 

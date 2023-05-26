@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/purple_200"
+    android:background="@drawable/gradient_bg"
     tools:context=".ThemeFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Set Theme:"
+        android:text="Available Themes"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="32sp" />
     <TextView
@@ -24,7 +25,7 @@
         android:layout_below="@id/rl1"
         android:text=""
         android:textAlignment="center"
-        android:textSize="32sp" />
+        android:textSize="20sp" />
 
     <RelativeLayout
         android:id="@+id/rl2"
@@ -37,16 +38,18 @@
             android:id="@+id/idRGgroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:orientation="horizontal">
 
             <!--radio button for light theme-->
             <RadioButton
                 android:id="@+id/idRBLight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:scaleX="1.5"
                 android:layout_marginLeft="120dp"
-                android:textSize="20sp"
+                android:layout_marginRight="30dp"
+                android:scaleY="1.5"
                 android:text="Light" />
 
             <!--radio button for dark theme-->
@@ -54,10 +57,14 @@
                 android:id="@+id/idRBDark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="16sp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
                 android:text="Dark" />
 
         </RadioGroup>
-    </RelativeLayout>/>
+
+    </RelativeLayout>
+
 
 </LinearLayout>

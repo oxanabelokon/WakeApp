@@ -49,26 +49,32 @@ public class Alarm extends BroadcastReceiver {
                 mp = MediaPlayer.create(context, R.raw.birds);
                 mp.start();
                 mp.isLooping();
-                Toast.makeText(context, "Time to wakeup!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Time to get up!!", Toast.LENGTH_LONG).show();
 
             }
             else if(sound.equals("owl")){
                 mp = MediaPlayer.create(context, R.raw.owl);
                 mp.start();
                 mp.isLooping();
-                Toast.makeText(context, "Time to wakeup!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Time to get up!!", Toast.LENGTH_LONG).show();
 
             }
             else if(sound.equals("rooster")){
                 mp = MediaPlayer.create(context, R.raw.rooster);
                 mp.start();
                 mp.isLooping();
-                Toast.makeText(context, "Time to wakeup!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Time to get up!!", Toast.LENGTH_LONG).show();
             }
+          else if(sound.equals("bell")){
+              mp = MediaPlayer.create(context, R.raw.bell);
+              mp.start();
+              mp.isLooping();
+              Toast.makeText(context, "Time to get up!!", Toast.LENGTH_LONG).show();
+          }
             else {
                    mp = MediaPlayer.create(context, Settings.System.DEFAULT_ALARM_ALERT_URI);
                    mp.start();
-                   Toast.makeText(context, "Time to wakeup!!" + sound, Toast.LENGTH_LONG).show();
+                   Toast.makeText(context, "Time to getup!!" + sound, Toast.LENGTH_LONG).show();
                }
 
 

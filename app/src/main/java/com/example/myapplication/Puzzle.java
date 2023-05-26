@@ -21,7 +21,7 @@ public class Puzzle extends AppCompatActivity {
     EditText editAnswer;
     Integer response, result;
     Button checkAnsw;
-    String nameView;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class Puzzle extends AppCompatActivity {
 
         //get user name
         Intent intent = getIntent();
-        nameView = intent.getStringExtra("name");
+        name = intent.getStringExtra("name");
 
     }
 
@@ -68,12 +68,12 @@ public class Puzzle extends AppCompatActivity {
         try {
             response = Integer.parseInt(userAnswer);
             if (response == result) {
-                Toast.makeText(this, "Have a nice day "+ nameView +"!! ", Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(Puzzle.this, MainActivity.class);
-                //startActivity(intent);
-                this.finishAffinity();
-                //finish();
-                //System.exit(0);
+                Toast.makeText(this, "Have a nice day "+ name +"!! ", Toast.LENGTH_SHORT).show();
+                //this.finishAffinity();
+                Intent intent = new Intent(Puzzle.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("EXIT", true);
+                startActivity(intent);
             } else
                 Toast.makeText(this, "Your answer is wrong, wakeup!! ", Toast.LENGTH_SHORT).show();
                 solveIt();

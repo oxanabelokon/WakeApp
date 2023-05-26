@@ -34,16 +34,16 @@ public class ThemeFragment extends Fragment {
                     case R.id.idRBLight:
                         // set text to text view as light mode.
                         theme.setText("Light Theme");
+                        theme.setVisibility(View.INVISIBLE);
                         // on below line changing theme to light mode.
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                        themeTitle.setVisibility(View.INVISIBLE);
                         break;
                     case R.id.idRBDark:
                         // this method is called when dark radio button is selected
                         theme.setText("Dark Theme");
+                        theme.setVisibility(View.INVISIBLE);
                         // change theme to dark mode.
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                        themeTitle.setVisibility(View.INVISIBLE);
                         break;
                 }
 
@@ -51,5 +51,4 @@ public class ThemeFragment extends Fragment {
         });
         return v;
     }
-
 }

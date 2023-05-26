@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@drawable/gradient_bg"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RingtoneFragment">
@@ -16,8 +16,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Set Ringtone:"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/soundView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -29,7 +31,7 @@
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:text=""
-        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
@@ -39,9 +41,9 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/rl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/soundView">
@@ -50,7 +52,8 @@
             android:id="@+id/birds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button"
             android:text="Birds"
             android:textStyle="bold" />
 
@@ -58,7 +61,8 @@
             android:id="@+id/owl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button"
             android:text="Owl"
             android:textStyle="bold" />
 
@@ -66,8 +70,17 @@
             android:id="@+id/rooster"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button"
             android:text="Rooster"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:text="Bell"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -75,8 +88,10 @@
         android:id="@+id/rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="120dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayout">
@@ -94,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="100dp"
-            android:text="Stop" />
+            android:text="Pause" />
     </RelativeLayout>
 
 

@@ -23,7 +23,7 @@ import android.widget.Toast;
 
 public class RingtoneFragment extends Fragment{
 
-    private Button set, birdsPlay,owlPlay,roosterPlay,pause ;
+    private Button set, birdsPlay,owlPlay,roosterPlay,pause,bellPlay ;
     private TextView sound;
 
     @Override
@@ -44,6 +44,7 @@ public class RingtoneFragment extends Fragment{
             public void onClick(View view) {
                 mp.start();
                 sound.setText("birds");
+                sound.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -55,6 +56,7 @@ public class RingtoneFragment extends Fragment{
             public void onClick(View view) {
                 mp2.start();
                 sound.setText("owl");
+                sound.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -66,6 +68,19 @@ public class RingtoneFragment extends Fragment{
             public void onClick(View view) {
                 mp3.start();
                 sound.setText("rooster");
+                sound.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        //bell sound
+        bellPlay = v.findViewById(R.id.bell);
+        final MediaPlayer mp4=MediaPlayer.create( getActivity(),R.raw.bell);
+        bellPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mp4.start();
+                sound.setText("bell");
+                sound.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -75,13 +90,16 @@ public class RingtoneFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 if(mp.isPlaying()) {
-                    mp.stop();
+                    mp.pause();
                 }
                 else if(mp2.isPlaying()){
-                    mp2.stop();
+                    mp2.pause();
                 }
                 else if(mp3.isPlaying()) {
-                    mp3.stop();
+                    mp3.pause();
+                }
+                else if(mp4.isPlaying()) {
+                    mp4.pause();
                 }
                 else
                     Toast.makeText(getActivity(), "Nothing is playing", Toast.LENGTH_SHORT).show();
@@ -112,6 +130,13 @@ public class RingtoneFragment extends Fragment{
                 } else if (mp3.isPlaying()) {
                     //sound.setText("rooster");
                     mp3.stop();
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    intent.putExtra("sound", sound.getText().toString());
+                    startActivity(intent);
+                }
+                else if (mp4.isPlaying()) {
+                    //sound.setText("bell");
+                    mp4.stop();
                     Intent intent = new Intent(getActivity(), MainActivity.class);
                     intent.putExtra("sound", sound.getText().toString());
                     startActivity(intent);

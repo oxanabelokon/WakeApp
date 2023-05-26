@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@drawable/gradient_bg"
     android:orientation="vertical"
     tools:context=".PersonFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
 
     <TextView
         android:id="@+id/txtView_Welcome"
@@ -25,7 +26,8 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:text="Enter your name: "
-        android:textSize="24sp" />
+        android:textStyle="bold"
+        android:textSize="32sp" />
 
     <EditText
         android:id="@+id/editName"
@@ -36,20 +38,30 @@
         android:textSize="20sp"
         android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="true"
-        android:text="Edit" />
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:textAllCaps="true"
-        android:text="Save" />
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:text="Edit"
+            android:textAllCaps="true" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="100dp"
+            android:layout_alignParentEnd="true"
+            android:text="Save"
+            android:textAllCaps="true" />
+    </RelativeLayout>
 
 
 
